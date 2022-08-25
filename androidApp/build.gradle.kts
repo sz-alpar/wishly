@@ -1,7 +1,6 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    id("kotlin-android-extensions")
+    id("com.android.application") version "7.2.2"
+    kotlin("android") version "1.7.10"
 }
 
 group = "net.repeatuntil"

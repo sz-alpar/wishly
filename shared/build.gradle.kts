@@ -2,9 +2,8 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
-    id("kotlin-android-extensions")
+    kotlin("multiplatform") version "1.7.10"
+    id("com.android.library") version "7.2.2"
 }
 
 group = "net.repeatuntil.wishly"
@@ -45,13 +44,13 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("com.google.android.material:material:1.2.1")
+                implementation("com.google.android.material:material:1.6.1")
             }
         }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13")
+                implementation("junit:junit:4.13.2")
             }
         }
         val iosMain by getting
