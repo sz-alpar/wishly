@@ -7,7 +7,7 @@ plugins {
     id("kotlin-android-extensions")
 }
 
-group = "net.repeatuntil"
+group = "net.repeatuntil.wishly"
 version = "1.0"
 
 kotlin {

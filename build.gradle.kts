@@ -12,7 +12,7 @@ buildscript {
     }
 }
 
-group = "net.repeatuntil"
+group = "net.repeatuntil.wishly"
 version = "1.0"
 
 allprojects {
