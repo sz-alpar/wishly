@@ -13,3 +13,4 @@ rootProject.name = "Wishly"
 include(":androidApp")
 include(":shared")
 
+include("domain")
