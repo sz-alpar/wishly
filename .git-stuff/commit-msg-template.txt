@@ -1,4 +1,4 @@
-<type>(<project>): <subject>
+<type>(<module>): <subject>
 
 <body>
 
@@ -16,17 +16,17 @@
 #   * docs: documentation changes.
 #   * ci: changes to build scripts or any other automation scripts or 
 #     configs (e.g., jazzy config, sphinx config).
-# * <project>: project that the commit makes changes to. If it makes 
+# * <module>: module that the commit makes changes to. If it makes 
 #   changes to many sections, or if no section in particular is 
 #   modified, leave blank without the parentheses. 
 #   Examples:
-#   * Commit that changes the bank-sdk project:
-#     feat(bank-sdk): Add error logging interface
-#   * Commit that updates the health-sdk documentation:
-#     doc(health-sdk): Update extraction feedback guide
+#   * Commit that changes the androidApp module:
+#     feat(androidApp): Add error logging interface
+#   * Commit that updates the shared documentation:
+#     docs(shared): Update extraction feedback guide
 #   * Commit that changes the build script:
 #     ci: Send slack message with build result
-#   * Commit that changes many projects:
+#   * Commit that changes many modules:
 #     chore: Update the android gradle plugin
 # * <subject>: short description in imperative mood summarising 
 #   the changes. For example: Add photo selection button.
