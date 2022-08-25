@@ -3,7 +3,7 @@ plugins {
     kotlin("android") version "1.7.10"
 }
 
-group = "net.repeatuntil"
+group = "net.repeatuntil.wishly"
 version = "1.0"
 
 dependencies {
