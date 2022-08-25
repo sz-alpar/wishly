@@ -14,11 +14,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 32
     defaultConfig {
         applicationId = "net.repeatuntil.androidApp"
-        minSdkVersion(24)
-        targetSdkVersion(30)
+        minSdk = 24
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
     }
