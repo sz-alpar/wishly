@@ -3,7 +3,8 @@ package net.repeatuntil.wishly.backend.user
 import net.repeatuntil.wishly.error.CommonException
 import net.repeatuntil.wishly.error.RegisterUserException
 import net.repeatuntil.wishly.error.UserException
-import net.repeatuntil.wishly.user.UserModel
+import net.repeatuntil.wishly.user.RegisterUserDTO
+import net.repeatuntil.wishly.user.User
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -14,19 +15,21 @@ class UserController {
 
     @GetMapping("/user/{userId}")
     fun getUser(@PathVariable("userId") userId: String): String {
-        return "User with id $userId will be returned here"
+        return userRepository.getUserById(userId)?.let { user ->
+            "User: $user"
+        } ?: "User not found"
     }
 
     @PostMapping("/user")
-    fun registerUser(@RequestBody registerUserDTO: RegisterUserDTO): String {
-        try {
-            val userModel = registerUserDTO.toUserModel()
-            registerUserUseCase(userModel)
+    fun registerUser(@RequestBody registerUserRequestDTO: RegisterUserRequestDTO): String {
+        return try {
+            val userId = User.generateUserId()
+            registerUserUseCase(registerUserRequestDTO, userId)
+            "User created with id $userId"
         } catch (userException: UserException) {
-            return userException.message ?: userException.toString()
+            userException.message ?: userException.toString()
         } catch (registerUserException: RegisterUserException) {
-            return registerUserException.message ?: registerUserException.toString()
+            registerUserException.message ?: registerUserException.toString()
         }
-        return registerUserDTO.toString()
     }
 }

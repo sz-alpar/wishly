@@ -1,6 +1,7 @@
 package net.repeatuntil.wishly.user
 
 interface UserRepository {
-    fun createUser(user: UserModel)
-    fun getUserByEmail(email: String): UserModel?
+    fun addUser(user: User)
+    fun getUserById(id: String): User?
+    fun getUserByEmail(email: String): User?
 }
